@@ -1,15 +1,17 @@
-{
-    "nacl.im": {
+[
+    {
+        "regex": "^[A-Z]+ nacl.im ",
         "server": "../nacl.im/server.js",
         "port": 8000
     },
-    "cryptopotamus.com": {
+    {
+        "regex": "^[A-Z]+ cryptopotamus.com ",
         "server": "../cryptopotamus.com/server.js",
         "port": 9000
     },
-    "cptms.com": {
+    {
+        "regex": "^[A-Z]+ cptms.com ",
         "server": "../cryptopotamus.com/server.js",
         "port": 9001
     }
-}
-
+]
