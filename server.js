@@ -1,5 +1,6 @@
 var fork = require('child_process').fork;
 var timers = require('timers');
+var path = require('path');
 
 function run_forever(file) {
     var args = [].slice.call(arguments);
@@ -28,7 +29,7 @@ function run_forever(file) {
             if (timeout) timers.clearTimeout(timeout);
             timeout = timers.setTimeout(fail, 2000);
         }
-        var service = fork('wrapper.js', args);
+        var service = fork(path.join(__dirname, 'wrapper.js'), args);
         service.on('error', fail);
         service.on('exit', fail);
         service.on('close', fail);
@@ -38,7 +39,7 @@ function run_forever(file) {
     }
     start_service();
 }
-run_forever('./router.js', 80, '0.0.0.0');
+run_forever(path.join(__dirname, './router.js'), 80, '0.0.0.0');
 var routes = require('./routes.json');
 Object.keys(routes).forEach(function (route) {
     run_forever(routes[route].server, routes[route].port, '0.0.0.0');

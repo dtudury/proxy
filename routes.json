@@ -3,9 +3,13 @@
         "server": "../nacl.im/server.js",
         "port": 8000
     },
-    "c--lang.com": {
+    "cryptopotamus.com": {
         "server": "../cryptopotamus.com/server.js",
         "port": 9000
+    },
+    "cptms.com": {
+        "server": "../cryptopotamus.com/server.js",
+        "port": 9001
     }
 }
 
