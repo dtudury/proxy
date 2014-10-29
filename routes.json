@@ -1,8 +1,18 @@
 [
     {
-        "regex": "^[A-Z]+ nacl.im ",
-        "server": "../nacl.im/server.js",
+        "regex": "^GET nacl.im /key/",
+        "server": "../nacl.im/endpoints/get_key.js",
         "port": 8000
+    },
+    {
+        "regex": "^PUT nacl.im /key/",
+        "server": "../nacl.im/endpoints/put_key.js",
+        "port": 8001
+    },
+    {
+        "regex": "^(GET|POST) nacl.im /data/",
+        "server": "../nacl.im/endpoints/data.js",
+        "port": 8002
     },
     {
         "regex": "^[A-Z]+ cryptopotamus.com ",
